@@ -8,7 +8,9 @@ pipeline {
               	}  
          	}
 			stage("running_maven") {
-				
+				steps {
+					echo "this is running maven stage"
+				}
 			}
         }
 }
