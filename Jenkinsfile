@@ -16,7 +16,7 @@ pipeline {
 			}
 			stage("pusing to s3 bucket") {
 				steps {
-					sh "aws s3 sync $WORKSPACE/target/ s3://vamsiawsdevops/ --recursive --exclude '*' --include '*.war'"
+					sh "aws s3 sync $WORKSPACE/target/ s3://vamsiawsdevops/ --exclude '*' --include '*.war'"
 				}
 			}
         }
