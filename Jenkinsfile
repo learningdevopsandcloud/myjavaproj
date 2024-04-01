@@ -10,6 +10,13 @@ pipeline {
 			stage("running_maven") {
 				steps {
 					sh 'mvn clean install'
+					sh 'pwd'
+					sh 'echo $WORKSPACE'
+				}
+			}
+			stage("pusing to s3 bucket") {
+				steps {
+					sh 'aws s3 sync $WORKSPACE/target/*.war s3://vamsiawsdevops/$WORKSPACE'
 				}
 			}
         }
