@@ -16,7 +16,7 @@ pipeline {
 			}
 			stage("pusing to s3 bucket") {
 				steps {
-					sh 'aws s3 sync $WORKSPACE/target/*.war s3://vamsiawsdevops$WORKSPACE'
+					sh 'aws s3 sync $WORKSPACE/target/*.war s3://vamsiawsdevops$WORKSPACE/onlinebookstore.war'
 				}
 			}
         }
