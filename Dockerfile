@@ -1,10 +1,10 @@
-from amazonlinux:latest
-
-RUN amazon-linux-extras install java-openjdk11
+from java:11
 
 COPY . myjava
 
 WORKDIR myjava
+
+RUN apt-get install -y wget
 
 RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
 
